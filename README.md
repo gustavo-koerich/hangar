@@ -1,5 +1,7 @@
 # Hangar
 
+[![build](https://github.com/gustavo-koerich/hangar/actions/workflows/build.yml/badge.svg)](https://github.com/gustavo-koerich/hangar/actions/workflows/build.yml)
+
 Painel de desktop para quem mantém muitos projetos na mesma máquina. O Hangar varre a pasta de projetos e mostra, em cartões, o que cada um é, em que situação está, o estado do git e do Docker, e oferece atalhos para ligar, desligar, abrir no VS Code ou abrir o link de teste.
 
 ## Como funciona
