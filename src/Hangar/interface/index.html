@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hangar</title>
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+  <header class="topo">
+    <div class="marca">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M3 15 16 6l13 9v12H3z" class="m-casa"/><path d="M8 27V17h16v10" class="m-porta"/><path d="M8 21h16M8 24h16" class="m-linhas"/></svg>
+      <div>
+        <h1>Hangar</h1>
+        <p id="resumo-topo">Carregando projetos…</p>
+      </div>
+    </div>
+    <div class="topo-acoes">
+      <input id="busca" type="search" placeholder="Buscar projeto, tecnologia, anotação…" autocomplete="off">
+      <button id="atualizar" class="botao" title="Ler tudo de novo (F5)">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M13.5 8A5.5 5.5 0 1 1 11.9 4.1M13.5 2.5v3h-3"/></svg>Atualizar
+      </button>
+    </div>
+  </header>
+
+  <nav class="filtros">
+    <div class="segmentos" id="filtro-area" role="tablist" aria-label="Área">
+      <button data-v="" class="ativo">Todos</button><button data-v="Trabalho">Trabalho</button><button data-v="Pessoal">Pessoal</button><button data-v="Estudos">Estudos</button>
+    </div>
+    <div class="chips" id="filtro-situacao" aria-label="Situação"></div>
+  </nav>
+
+  <section id="alertas" class="alertas" hidden></section>
+
+  <main id="lista" class="lista" aria-live="polite"></main>
+
+  <aside id="detalhe" class="detalhe" hidden aria-label="Detalhes do projeto">
+    <div class="detalhe-fundo" data-fechar></div>
+    <div class="detalhe-painel" role="dialog" aria-modal="true" aria-labelledby="d-nome">
+      <div class="detalhe-cabeca">
+        <div>
+          <div class="d-etiquetas" id="d-etiquetas"></div>
+          <h2 id="d-nome"></h2>
+          <p id="d-pasta" class="mono suave"></p>
+        </div>
+        <button class="botao-icone" data-fechar title="Fechar (Esc)" aria-label="Fechar">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8"/></svg>
+        </button>
+      </div>
+      <div class="detalhe-corpo" id="d-corpo"></div>
+    </div>
+  </aside>
+
+  <div id="aviso" class="toast" role="status" hidden></div>
+  <script src="app.js"></script>
+</body>
+</html>

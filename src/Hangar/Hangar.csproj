@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AssemblyName>Hangar</AssemblyName>
+    <RootNamespace>Hangar</RootNamespace>
+    <Product>Hangar</Product>
+    <Version>0.1.0</Version>
+    <ApplicationIcon>hangar.ico</ApplicationIcon>
+    <!-- Publicado autocontido (publicar.ps1): o PC novo não precisa de .NET instalado. -->
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <RollForward>Major</RollForward>
+    <EnableCompressionInSingleFile>true</EnableCompressionInSingleFile>
+    <PublishReferencesDocumentationFiles>false</PublishReferencesDocumentationFiles>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.2903.40" />
+    <PackageReference Include="YamlDotNet" Version="16.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="hangar.ico" />
+    <!-- A interface fica solta ao lado do .exe: dá para ajustar o HTML sem recompilar. -->
+    <Content Include="interface\**" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+  </ItemGroup>
+
+</Project>
